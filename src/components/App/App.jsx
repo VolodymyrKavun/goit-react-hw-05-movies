@@ -1,6 +1,5 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { getDataFromApi } from 'components/Api/movies-service';
 import Home from 'components/pages/Home';
 import Movies from 'components/pages/Movies';
 import MovieDetails from 'components/pages/MovieDetails';
