@@ -5,17 +5,17 @@ import {
   MovieCardItem,
   MovieTitle,
   MovieImage,
-} from './MovieList.styled';
+} from 'components/MovieList/MovieList.styled';
 
 const BASE_URL = 'https://image.tmdb.org/t/p/w500';
 
-const MovieList = ({ movies }) => {
+const SearchList = ({ resultsSearch }) => {
   const location = useLocation();
 
   return (
     <ContainerList>
       <MovieListUl>
-        {movies.map(({ id, title, backdrop_path }) => (
+        {resultsSearch.map(({ id, title, backdrop_path }) => (
           <MovieCardItem key={id}>
             <Link to={`/movies/${id}`} state={{ from: location }}>
               <MovieImage src={`${BASE_URL}${backdrop_path}`} alt={title} />
@@ -28,4 +28,4 @@ const MovieList = ({ movies }) => {
   );
 };
 
-export default MovieList;
+export default SearchList;

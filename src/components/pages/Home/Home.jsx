@@ -4,13 +4,13 @@ import MovieList from 'components/MovieList';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
-  console.log('🚀 ~ movies', movies);
 
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const movies = await getDataFromApiTrending();
-        setMovies(movies.results);
+        const { results } = await getDataFromApiTrending();
+
+        setMovies(results);
       } catch (error) {
         console.log(error.message);
       }
