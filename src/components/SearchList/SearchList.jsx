@@ -8,6 +8,8 @@ import {
 } from 'components/MovieList/MovieList.styled';
 
 const BASE_URL = 'https://image.tmdb.org/t/p/w500';
+const errorImage =
+  'https://img.freepik.com/premium-vector/modern-mini…page-not-found-with-concept_599740-716.jpg?w=200';
 
 const SearchList = ({ resultsSearch }) => {
   const location = useLocation();
@@ -15,14 +17,19 @@ const SearchList = ({ resultsSearch }) => {
   return (
     <ContainerList>
       <MovieListUl>
-        {resultsSearch.map(({ id, title, backdrop_path }) => (
-          <MovieCardItem key={id}>
-            <Link to={`/movies/${id}`} state={{ from: location }}>
-              <MovieImage src={`${BASE_URL}${backdrop_path}`} alt={title} />
-              <MovieTitle>{title}</MovieTitle>
-            </Link>
-          </MovieCardItem>
-        ))}
+        {resultsSearch.map(({ id, title, backdrop_path }) => {
+          const image = backdrop_path
+            ? `${BASE_URL}${backdrop_path}`
+            : errorImage;
+          return (
+            <MovieCardItem key={id}>
+              <Link to={`/movies/${id}`} state={{ from: location }}>
+                <MovieImage src={image} alt={title} />
+                <MovieTitle>{title}</MovieTitle>
+              </Link>
+            </MovieCardItem>
+          );
+        })}
       </MovieListUl>
     </ContainerList>
   );
