@@ -3,6 +3,8 @@ import { useLocation } from 'react-router-dom';
 import { CardButtonBack, CardMovieContainer } from './CardMovie.styled';
 
 const BASE_URL = 'https://image.tmdb.org/t/p/w300';
+const errorImage =
+  'https://img.freepik.com/premium-vector/modern-mini…page-not-found-with-concept_599740-716.jpg?w=200';
 
 const CardMovie = ({
   id,
@@ -15,6 +17,8 @@ const CardMovie = ({
   const location = useLocation();
   const navigate = useNavigate();
 
+  const image = poster_path ? `${BASE_URL}${poster_path}` : errorImage;
+
   return (
     <CardMovieContainer key={id}>
       <CardButtonBack
@@ -25,7 +29,7 @@ const CardMovie = ({
       >
         Go Back
       </CardButtonBack>
-      <img src={`${BASE_URL}${poster_path}`} alt={original_title} />
+      <img src={image} alt={original_title} />
       <h1>{original_title}</h1>
       <p>User Score: {Math.round(vote_average) * 10}%</p>
       <h3>Overview</h3>
