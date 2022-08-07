@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getDataFromApiTrending } from 'components/Api/movies-service';
+import { getDataFromApiTrending } from '../../Api/movies-service';
 import MovieList from 'components/MovieList';
 
 const Home = () => {

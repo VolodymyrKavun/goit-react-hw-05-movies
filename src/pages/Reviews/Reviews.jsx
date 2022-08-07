@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getDataFromApiReviews } from 'components/Api/movies-service';
+import { getDataFromApiReviews } from '../../Api/movies-service';
 import Feedback from 'components/Feedback';
 
 const Reviews = () => {

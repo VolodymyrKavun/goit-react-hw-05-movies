@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getDataFromApiMovieDetails } from 'components/Api/movies-service';
+import { getDataFromApiMovieDetails } from '../../Api/movies-service';
 import { useParams } from 'react-router-dom';
 import CardMovie from 'components/CardMovie';
 

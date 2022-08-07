@@ -1,4 +1,4 @@
-import { getDataFromApiActorInfo } from 'components/Api/movies-service';
+import { getDataFromApiActorInfo } from '../../Api/movies-service';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Actors from 'components/Actors';

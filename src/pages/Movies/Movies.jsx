@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import Form from 'components/Form';
-import { getDataFromApiSearchByName } from 'components/Api/movies-service';
+import { getDataFromApiSearchByName } from '../../Api/movies-service';
 import SearchList from 'components/SearchList';
-import ErrorImage from 'components/ErrorImage';
+import ErrorImage from '../../utils/ErrorImage';
 
 const Movies = () => {
   const [value, setValue] = useState('');

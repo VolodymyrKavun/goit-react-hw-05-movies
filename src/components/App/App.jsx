@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
-import Loader from 'components/Loader';
+import Loader from '../../utils/Loader';
 import Header from 'components/Header';
 
 // import Home from 'components/pages/Home';
@@ -11,12 +11,12 @@ import Header from 'components/Header';
 // import Reviews from 'components/pages/Reviews';
 // import NotFound from 'components/pages/NotFound';
 
-const Home = lazy(() => import('components/pages/Home'));
-const Movies = lazy(() => import('components/pages/Movies'));
-const MovieDetails = lazy(() => import('components/pages/MovieDetails'));
-const Cast = lazy(() => import('components/pages/Cast'));
-const Reviews = lazy(() => import('components/pages/Reviews'));
-const NotFound = lazy(() => import('components/pages/NotFound'));
+const Home = lazy(() => import('../../pages/Home'));
+const Movies = lazy(() => import('../../pages/Movies'));
+const MovieDetails = lazy(() => import('../../pages/MovieDetails'));
+const Cast = lazy(() => import('../../pages/Cast'));
+const Reviews = lazy(() => import('../../pages/Reviews'));
+const NotFound = lazy(() => import('../../pages/NotFound'));
 
 const App = () => {
   return (
